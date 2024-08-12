@@ -1,3 +1,19 @@
-#container{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container {
     display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+    gap: 0px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+.div-class {
+    flex: 0 0 calc(100% / 16);
+    height: calc(100% / 16);
+    border: 1px solid #ccc;
 }
