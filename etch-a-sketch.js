@@ -8,6 +8,6 @@ for (let i=0; i < numberOfDiv; i++){
 };
 container.addEventListener('mouseover', (event)=>{
     if (event.target.classList.contains('div-class')) {
-        event.target.backgroundColor = '0x87ceeb';
+        event.target.style.backgroundColor = '#87ceeb';
     }
 }); 
