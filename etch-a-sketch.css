@@ -17,3 +17,7 @@
     height: calc(100% / 16);
     border: 1px solid #ccc;
 }
+#popup {
+    flex-direction: column;
+    
+}
