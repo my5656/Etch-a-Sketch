@@ -26,12 +26,10 @@ confirmButton.addEventListener("click", function(){
 });
 function recreateGrid(gridNumber){
     container.innerHTML = '';
-    const gridSize = Math.floor(800/gridNumber);
+    container.style.setProperty('--grid-size', gridNumber);
     for (let i=0; i < gridNumber*gridNumber; i++){
         const newDiv = document.createElement('div');
         newDiv.classList.add('div-class');
-        newDiv.style.width = `${gridSize}px`;
-        newDiv.style.height = `${gridSize}px`;
         container.appendChild(newDiv);
     }
 };
