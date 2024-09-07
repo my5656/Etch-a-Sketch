@@ -18,7 +18,3 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-#popup {
-    flex-direction: column;
-
-}
