@@ -26,7 +26,7 @@ confirmButton.addEventListener("click", function(){
 });
 function recreateGrid(gridNumber){
     container.innerHTML = '';
-    const gridSize = 800/gridNumber;
+    const gridSize = (800/gridNumber)-2;
     for (let i=0; i < gridNumber*gridNumber; i++){
         const newDiv = document.createElement('div');
         newDiv.classList.add('div-class');
