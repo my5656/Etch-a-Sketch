@@ -13,8 +13,8 @@
     margin: 10px;
 }
 .div-class {
-    flex-basis: calc(100% / 16);
-    height: calc(100% / 16);
+    flex: 1 0 calc(100% / var(--grid-size));
+    height: calc(100% / var(--grid-size));
     box-sizing: border-box;
     border: 1px solid #ccc;
 }
