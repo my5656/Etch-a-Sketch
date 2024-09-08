@@ -1,5 +1,5 @@
 const container = document.getElementById('container');
-const gridSize = 16;
+let gridSize = 16;
 createInitialGrid(gridSize);
 
 function createInitialGrid(gridSize) {
@@ -20,21 +20,22 @@ container.addEventListener('mouseover', (event) => {
 const numberInput = document.getElementById("numberInput");
 const confirmButton = document.getElementById("confirmButton");
 confirmButton.addEventListener("click", function () {
-    const gridNumber = parseInt(numberInput.value);
-    if (isNaN(gridNumber) || gridNumber <= 0) {
+    let inputValue = parseInt(numberInput.value);
+    if (isNaN(inputValue) || inputValue <= 0) {
         alert("Please enter a valid number greater than 0.");
     }
-    else if (gridNumber > 100) {
+    else if (inputValue > 100) {
         alert("Please enter a number less than 100.");
     }
     else {
-        recreateGrid(gridNumber);
+        gridSize = inputValue;
+        recreateGrid(gridSize);
     }
 });
-function recreateGrid(gridNumber) {
+function recreateGrid(gridSize) {
     container.innerHTML = '';
-    container.style.setProperty('--grid-size', gridNumber);
-    for (let i = 0; i < gridNumber * gridNumber; i++) {
+    container.style.setProperty('--grid-size', gridSize);
+    for (let i = 0; i < gridSize * gridSize; i++) {
         const newDiv = document.createElement('div');
         newDiv.classList.add('div-class');
         container.appendChild(newDiv);
