@@ -2,36 +2,39 @@ const container = document.getElementById('container');
 const gridSize = 16;
 createInitialGrid(gridSize);
 
-function createInitialGrid(gridSize){
-for (let i=0; i < gridSize*gridSize; i++){
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('div-class');
-    container.appendChild(newDiv);
+function createInitialGrid(gridSize) {
+    container.style.setProperty('--grid-size', gridSize);
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('div-class');
+        container.appendChild(newDiv);
     }
 };
 
-container.addEventListener('mouseover', (event)=>{
+container.addEventListener('mouseover', (event) => {
     if (event.target.classList.contains('div-class')) {
         event.target.style.backgroundColor = '#87ceeb';
     }
-}); 
+});
 
 const numberInput = document.getElementById("numberInput");
 const confirmButton = document.getElementById("confirmButton");
-confirmButton.addEventListener("click", function(){
+confirmButton.addEventListener("click", function () {
     const gridNumber = parseInt(numberInput.value);
-    if (isNaN(gridNumber) || gridNumber<=0){
+    if (isNaN(gridNumber) || gridNumber <= 0) {
         alert("Please enter a valid number greater than 0.");
     }
-    if (gridNumber > 100){
+    else if (gridNumber > 100) {
         alert("Please enter a number less than 100.");
     }
-    recreateGrid(gridNumber);
+    else {
+        recreateGrid(gridNumber);
+    }
 });
-function recreateGrid(gridNumber){
+function recreateGrid(gridNumber) {
     container.innerHTML = '';
     container.style.setProperty('--grid-size', gridNumber);
-    for (let i=0; i < gridNumber*gridNumber; i++){
+    for (let i = 0; i < gridNumber * gridNumber; i++) {
         const newDiv = document.createElement('div');
         newDiv.classList.add('div-class');
         container.appendChild(newDiv);
